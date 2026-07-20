@@ -45,9 +45,8 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
             className="mt-6 max-w-lg text-balance text-lg leading-relaxed text-ink-500"
           >
-            TecDit builds premium websites for restaurants, salons, HVAC
-            companies, and other local businesses — designed to win trust and
-            turn visitors into customers.
+            TecDit builds premium websites for local businesses — designed
+            to win trust and turn visitors into customers.
           </motion.p>
 
           <motion.div

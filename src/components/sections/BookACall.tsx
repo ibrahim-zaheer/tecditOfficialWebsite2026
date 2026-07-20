@@ -112,7 +112,7 @@ export function BookACall() {
                     label="Business Name"
                     name="business"
                     type="text"
-                    placeholder="Jane's Cafe"
+                    placeholder="Your Business Name"
                     required
                   />
                 </div>

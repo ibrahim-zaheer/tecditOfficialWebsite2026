@@ -40,7 +40,7 @@ export const differentiators: Differentiator[] = [
   {
     title: "Built for local businesses",
     description:
-      "We don't do generic templates for generic businesses. Every site is built around how customers actually find and book restaurants, salons, and home service companies.",
+      "We don't do generic templates for generic businesses. Every site is built around how your customers actually find and book with you.",
   },
   {
     title: "Focused on results, not just looks",

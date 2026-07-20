@@ -4,7 +4,7 @@ import { PortfolioExplorer } from "@/components/portfolio/PortfolioExplorer";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Browse TecDit's website projects for local businesses, filterable by industry — from auto repair to fitness to home services.",
+    "Browse TecDit's website projects for local businesses, filterable by industry.",
 };
 
 export default function PortfolioPage() {

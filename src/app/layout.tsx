@@ -25,13 +25,11 @@ export const metadata: Metadata = {
     template: "%s | TecDit",
   },
   description:
-    "TecDit builds premium, high-performing websites for local businesses — restaurants, salons, HVAC, cleaning, and more. Book a free call and see what a better website could do for you.",
+    "TecDit builds premium, high-performing websites for local businesses. Book a free call and see what a better website could do for you.",
   keywords: [
     "local business website design",
     "small business web development",
-    "restaurant website design",
-    "salon website design",
-    "HVAC website design",
+    "local business web design",
     "web design agency for local business",
   ],
   authors: [{ name: "TecDit" }],

@@ -11,10 +11,10 @@ export interface PricingTier {
 export const pricingTiers: PricingTier[] = [
   {
     name: "Starter",
-    price: "$150",
+    price: "$499",
     description: "A clean, professional presence for businesses just getting online.",
     features: [
-      "Up to 5 pages",
+      "5–6 pages",
       "Mobile-responsive design",
       "Contact form",
       "Google Maps integration",
@@ -24,12 +24,12 @@ export const pricingTiers: PricingTier[] = [
     ctaLabel: "Get Started",
   },
   {
-    name: "Professional",
-    price: "$350",
+    name: "Growth",
+    price: "$1,099",
     description: "For businesses ready to turn their website into a booking machine.",
     features: [
       "Everything in Starter",
-      "Up to 10 pages",
+      "10–12 pages",
       "Online booking or appointments",
       "Professional copywriting",
       "On-page + local SEO",
@@ -40,11 +40,12 @@ export const pricingTiers: PricingTier[] = [
     ctaLabel: "Get Started",
   },
   {
-    name: "Premium",
-    price: "$500",
-    description: "A fully custom, growth-ready site for businesses that want it all.",
+    name: "Custom",
+    price: "Custom Quote",
+    description:
+      "A fully custom, growth-ready site built entirely around your specific requirements — no fixed page count.",
     features: [
-      "Everything in Professional",
+      "Everything in Growth",
       "Fully custom design",
       "Advanced booking or light e-commerce",
       "Blog / content system",

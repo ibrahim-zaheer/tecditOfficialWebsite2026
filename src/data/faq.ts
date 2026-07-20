@@ -7,7 +7,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "How long does it take to get my website live?",
     answer:
-      "Most Starter and Professional sites launch within 1–2 weeks of us receiving your content and feedback. Premium builds typically take 3–4 weeks depending on scope. We'll give you an exact timeline on your free call.",
+      "Most Starter and Growth sites launch within 1–2 weeks of us receiving your content and feedback. Custom builds typically take 3–4 weeks depending on scope. We'll give you an exact timeline on your free call.",
   },
   {
     question: "I'm not techy at all — will I be able to keep up?",
@@ -17,7 +17,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "Do you write the content, or do I need to provide it?",
     answer:
-      "We can do either. Professional and Premium packages include professional copywriting, so we can write the whole site for you based on a short conversation. You're always welcome to provide or edit your own content too.",
+      "We can do either. Growth and Custom packages include professional copywriting, so we can write the whole site for you based on a short conversation. You're always welcome to provide or edit your own content too.",
   },
   {
     question: "Will my website actually show up on Google?",
