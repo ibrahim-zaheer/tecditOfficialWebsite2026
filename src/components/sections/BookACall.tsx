@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, Mail, Clock, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Mail, Clock, ShieldCheck, AlertCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -12,12 +12,40 @@ const reassurances = [
   { icon: Mail, label: "Straight answers, in plain language" },
 ];
 
-export function BookACall() {
-  const [submitted, setSubmitted] = useState(false);
+type Status = "idle" | "submitting" | "success" | "error";
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+export function BookACall() {
+  const [status, setStatus] = useState<Status>("idle");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+    setStatus("submitting");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    formData.append(
+      "access_key",
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? ""
+    );
+    formData.append("subject", "New Free Call Request — TecDit Website");
+    formData.append("from_name", "TecDit Website");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -61,7 +89,7 @@ export function BookACall() {
 
         <Reveal delay={0.12}>
           <div className="rounded-3xl bg-white p-7 shadow-2xl sm:p-9">
-            {submitted ? (
+            {status === "success" ? (
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -114,11 +142,24 @@ export function BookACall() {
                     className="rounded-xl border border-border bg-white px-4 py-3 text-sm text-ink-900 outline-none transition-colors placeholder:text-ink-300 focus:border-brand-500"
                   />
                 </label>
+
+                {/* Honeypot field to deter simple form bots */}
+                <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
+
+                {status === "error" && (
+                  <div className="flex items-center gap-2 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-600">
+                    <AlertCircle className="size-4 shrink-0" />
+                    Something went wrong sending your request. Please try
+                    again or email us directly.
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="mt-1 inline-flex h-12 items-center justify-center rounded-full bg-brand-600 text-sm font-semibold text-white transition-colors hover:bg-brand-700 active:scale-[0.98]"
+                  disabled={status === "submitting"}
+                  className="mt-1 inline-flex h-12 items-center justify-center rounded-full bg-brand-600 text-sm font-semibold text-white transition-colors hover:bg-brand-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Request My Free Call
+                  {status === "submitting" ? "Sending..." : "Request My Free Call"}
                 </button>
                 <p className="text-center text-xs text-ink-400">
                   Prefer email? Reach us directly at{" "}
