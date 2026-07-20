@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 function SiteSkeleton({ gradient }: { gradient: [string, string] }) {
@@ -33,6 +36,40 @@ function SiteSkeleton({ gradient }: { gradient: [string, string] }) {
   );
 }
 
+function CrossfadeImage({
+  image,
+  alt,
+  sizes,
+  priority,
+}: {
+  image: string;
+  alt: string;
+  sizes: string;
+  priority?: boolean;
+}) {
+  return (
+    <AnimatePresence>
+      <motion.div
+        key={image}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        className="absolute inset-0"
+      >
+        <Image
+          src={image}
+          alt={alt}
+          fill
+          sizes={sizes}
+          priority={priority}
+          className="object-cover object-top"
+        />
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
 export function BrowserMockup({
   gradient,
   image,
@@ -59,15 +96,13 @@ export function BrowserMockup({
         <span className="size-2.5 rounded-full bg-[#28c840]" />
         <div className="ml-3 h-5 w-2/3 rounded-full bg-white" />
       </div>
-      <div className="relative aspect-[16/10]">
+      <div className="relative aspect-[16/10] overflow-hidden">
         {image ? (
-          <Image
-            src={image}
+          <CrossfadeImage
+            image={image}
             alt={alt}
-            fill
             sizes="(min-width: 1024px) 640px, 90vw"
             priority={priority}
-            className="object-cover object-top"
           />
         ) : (
           <SiteSkeleton gradient={gradient} />
@@ -98,13 +133,7 @@ export function PhoneMockup({
       <div className="relative aspect-[9/19] overflow-hidden rounded-[1.4rem]">
         <div className="absolute left-1/2 top-1.5 z-10 h-3 w-16 -translate-x-1/2 rounded-full bg-ink-900" />
         {image ? (
-          <Image
-            src={image}
-            alt={alt}
-            fill
-            sizes="180px"
-            className="object-cover object-top"
-          />
+          <CrossfadeImage image={image} alt={alt} sizes="180px" />
         ) : (
           <SiteSkeleton gradient={gradient} />
         )}

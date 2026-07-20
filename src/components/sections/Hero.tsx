@@ -5,7 +5,7 @@ import { ChevronDown, Zap, Search, Smartphone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { BrowserMockup, PhoneMockup } from "@/components/ui/DeviceMockup";
+import { HeroShowcase } from "@/components/sections/HeroShowcase";
 
 const trustChips = [
   { icon: Smartphone, label: "Mobile-First Design" },
@@ -86,20 +86,8 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto w-full max-w-md lg:max-w-none"
         >
-          <BrowserMockup
-            gradient={["#162872", "#2f52f0"]}
-            className="w-full"
-          />
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute -bottom-10 -right-6 w-28 sm:-right-10 sm:w-36"
-          >
-            <PhoneMockup gradient={["#0b3d91", "#1fb6d6"]} />
-          </motion.div>
+          <HeroShowcase />
         </motion.div>
       </Container>
 

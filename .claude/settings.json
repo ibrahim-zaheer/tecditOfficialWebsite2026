@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nslookup api.web3forms.com)",
+      "Bash(curl -v --max-time 8 https://api.web3forms.com)"
+    ]
+  }
+}
