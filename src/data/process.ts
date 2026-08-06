@@ -9,7 +9,7 @@ export const processSteps: ProcessStep[] = [
     number: "01",
     title: "Book a Free Call",
     description:
-      "Tell us about your business and what you want your website to do — no pressure, no jargon.",
+      "Tell us about your business and what you want your website to do. No pressure, no jargon.",
   },
   {
     number: "02",
@@ -27,7 +27,7 @@ export const processSteps: ProcessStep[] = [
     number: "04",
     title: "We Keep It Running",
     description:
-      "Optional ongoing care means updates, edits, and hosting are handled — so you can focus on your business.",
+      "Optional ongoing care means updates, edits, and hosting are handled, so you can focus on your business.",
   },
 ];
 
@@ -45,7 +45,7 @@ export const differentiators: Differentiator[] = [
   {
     title: "Focused on results, not just looks",
     description:
-      "A beautiful site that doesn't generate calls or bookings isn't doing its job. Every page is built around one goal: turning visitors into customers.",
+      "A beautiful site that doesn't show up in search or generate calls isn't doing its job. Every page is built around one goal: making sure customers find you before they find your competitor.",
   },
   {
     title: "No agency jargon",

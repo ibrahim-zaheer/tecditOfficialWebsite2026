@@ -18,7 +18,7 @@ export function FeaturedWork() {
         <SectionHeading
           eyebrow="Our Work"
           title="Websites Built to Grow Local Businesses"
-          description="We create high-performing websites that don't just look great — they help local businesses attract customers, build trust, and generate more leads. Every project is designed with performance, user experience, local SEO, and conversions in mind."
+          description="We create high-performing websites that don't just look great. They help local businesses attract customers, build trust, and generate more leads. Every project is designed with performance, user experience, getting found by local customers, and conversions in mind."
         />
 
         <div className="mt-16 flex flex-col gap-10">

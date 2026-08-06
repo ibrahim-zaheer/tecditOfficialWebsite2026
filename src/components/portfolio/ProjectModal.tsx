@@ -18,6 +18,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Project } from "@/lib/types";
 import { getAdjacentProjects } from "@/data/projects";
+import { CAL_LINK } from "@/lib/cal";
 
 export function ProjectModal({
   project,
@@ -219,7 +220,7 @@ export function ProjectModal({
                 <p className="mt-2 text-sm leading-relaxed text-ink-500">{project.outcome}</p>
                 {project.status === "concept" && (
                   <p className="mt-3 text-xs text-ink-400">
-                    This is a concept project built to demonstrate our approach — not a
+                    This is a concept project built to demonstrate our approach, not a
                     completed client engagement.
                   </p>
                 )}
@@ -247,7 +248,7 @@ export function ProjectModal({
               )}
 
               <div className="mt-10 flex justify-center">
-                <Button href="/#book-a-call" size="lg" showArrow onClick={onClose}>
+                <Button calLink={CAL_LINK} size="lg" showArrow onClick={onClose}>
                   Book a Free Call
                 </Button>
               </div>

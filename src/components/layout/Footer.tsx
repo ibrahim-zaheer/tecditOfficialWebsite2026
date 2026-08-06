@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { CAL_LINK } from "@/lib/cal";
 
 const columns = [
   {
@@ -14,21 +15,13 @@ const columns = [
       { label: "FAQ", href: "/#faq" },
     ],
   },
-  {
-    title: "Roadmap",
-    links: [
-      { label: "AI Agents — Coming Soon", href: "/#services" },
-      { label: "Marketing — Coming Soon", href: "/#services" },
-      { label: "POS — Coming Soon", href: "/#services" },
-    ],
-  },
 ];
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-white">
       <Container className="py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div className="max-w-sm">
             <Link href="/" className="flex items-center gap-2.5">
               <Image
@@ -43,10 +36,10 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-ink-500">
-              Premium websites for local businesses across the United States —
+              Premium websites for local businesses across the United States,
               built to earn trust and win more customers.
             </p>
-            <Button href="/#book-a-call" size="md" className="mt-6">
+            <Button calLink={CAL_LINK} size="md" className="mt-6">
               Book a Free Call
             </Button>
           </div>
@@ -72,6 +65,18 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-ink-900">Contact</h3>
             <ul className="mt-4 flex flex-col gap-3">
+              <li>
+                <a
+                  href="tel:+19716682679"
+                  className="flex items-center gap-2 text-sm text-ink-500 transition-colors hover:text-brand-600"
+                >
+                  <Phone className="size-4" />
+                  (971) 668-2679
+                </a>
+                <span className="mt-1 block pl-6 text-xs text-ink-400">
+                  Mon–Fri, 9am–2pm ET
+                </span>
+              </li>
               <li>
                 <a
                   href="mailto:hello@tecdit.com"

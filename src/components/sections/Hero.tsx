@@ -6,10 +6,11 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { HeroShowcase } from "@/components/sections/HeroShowcase";
+import { CAL_LINK } from "@/lib/cal";
 
 const trustChips = [
   { icon: Smartphone, label: "Mobile-First Design" },
-  { icon: Search, label: "Local SEO Ready" },
+  { icon: Search, label: "Built to Get Found" },
   { icon: Zap, label: "Fast Turnaround" },
 ];
 
@@ -36,7 +37,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
             className="font-display mt-6 text-balance text-4xl font-semibold tracking-tight text-ink-900 sm:text-5xl lg:text-[3.4rem] lg:leading-[1.08]"
           >
-            A Website That Works As Hard As You Do
+            Every Day You&apos;re Not Found, a Competitor Gets the Call
           </motion.h1>
 
           <motion.p
@@ -45,8 +46,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
             className="mt-6 max-w-lg text-balance text-lg leading-relaxed text-ink-500"
           >
-            TecDit builds premium websites for local businesses — designed
-            to win trust and turn visitors into customers.
+            We build websites that put you in front of customers who are
+            already searching for what you offer, so the business goes to
+            you, not whoever shows up first on Google.
           </motion.p>
 
           <motion.div
@@ -55,7 +57,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
             className="mt-9 flex flex-col gap-3 sm:flex-row"
           >
-            <Button href="/#book-a-call" size="lg" showArrow>
+            <Button calLink={CAL_LINK} size="lg" showArrow>
               Book a Free Call
             </Button>
             <Button href="/#work" variant="secondary" size="lg">

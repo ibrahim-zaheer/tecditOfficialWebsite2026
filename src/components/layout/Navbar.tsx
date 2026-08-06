@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { CAL_LINK } from "@/lib/cal";
 
 const navLinks = [
   { label: "Services", href: "/#services" },
@@ -68,20 +69,54 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="hidden lg:block">
-          <Button href="/#book-a-call" size="md">
-            Book a Free Call
-          </Button>
-        </div>
+        <div className="flex items-center gap-2 sm:gap-4">
+          {/* Desktop: icon + number + availability */}
+          <a
+            href="tel:+19716682679"
+            className="group hidden flex-col leading-tight lg:flex"
+          >
+            <span className="flex items-center gap-1.5 text-sm font-medium text-ink-700 transition-colors group-hover:text-brand-600">
+              <Phone className="size-4 text-brand-600" />
+              (971) 668-2679
+            </span>
+            <span className="pl-5.5 text-xs text-ink-400">
+              Mon–Fri, 9am–2pm ET
+            </span>
+          </a>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="flex size-10 items-center justify-center rounded-full text-ink-900 lg:hidden"
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="size-6" /> : <Menu className="size-6" />}
-        </button>
+          {/* Tablet: number only */}
+          <a
+            href="tel:+19716682679"
+            className="hidden items-center gap-1.5 text-sm font-medium text-ink-700 transition-colors hover:text-brand-600 sm:flex lg:hidden"
+          >
+            <Phone className="size-4 text-brand-600" />
+            (971) 668-2679
+          </a>
+
+          {/* Mobile: icon-only tap target */}
+          <a
+            href="tel:+19716682679"
+            aria-label="Call TecDit"
+            className="flex size-11 items-center justify-center text-ink-700 transition-colors hover:text-brand-600 sm:hidden"
+          >
+            <Phone className="size-5" />
+          </a>
+
+          <div className="hidden lg:block">
+            <Button calLink={CAL_LINK} size="md">
+              Book a Free Call
+            </Button>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="flex size-10 items-center justify-center rounded-full text-ink-900 lg:hidden"
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="size-6" /> : <Menu className="size-6" />}
+          </button>
+        </div>
       </nav>
 
       {open && (
@@ -97,7 +132,7 @@ export function Navbar() {
               </Link>
             ))}
           </div>
-          <Button href="/#book-a-call" size="lg" className="mt-4 w-full">
+          <Button calLink={CAL_LINK} size="lg" className="mt-4 w-full">
             Book a Free Call
           </Button>
         </div>

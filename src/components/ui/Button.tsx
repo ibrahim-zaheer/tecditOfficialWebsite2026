@@ -37,7 +37,15 @@ interface ClickButtonProps extends BaseProps {
   type?: "button" | "submit";
 }
 
-type ButtonProps = LinkButtonProps | ClickButtonProps;
+interface CalButtonProps extends BaseProps {
+  href?: never;
+  onClick?: () => void;
+  calLink: string;
+  calNamespace?: string;
+  calConfig?: Record<string, string>;
+}
+
+type ButtonProps = LinkButtonProps | ClickButtonProps | CalButtonProps;
 
 export function Button({
   variant = "primary",
@@ -62,6 +70,21 @@ export function Button({
       )}
     </>
   );
+
+  if ("calLink" in props && props.calLink) {
+    return (
+      <button
+        type="button"
+        onClick={props.onClick}
+        data-cal-namespace={props.calNamespace ?? "15min"}
+        data-cal-link={props.calLink}
+        data-cal-config={JSON.stringify(props.calConfig ?? { layout: "month_view" })}
+        className={cn(classes, "group")}
+      >
+        {content}
+      </button>
+    );
+  }
 
   if ("href" in props && props.href) {
     return (

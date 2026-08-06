@@ -13,7 +13,7 @@ export function WhyTecDit() {
         <SectionHeading
           eyebrow="Why TecDit"
           title="A Website Partner That Actually Gets Local Business"
-          description="You don't need a technical dictionary or a marketing degree to work with us — just a business you're proud of and customers you want to reach."
+          description="You don't need a technical dictionary or a marketing degree to work with us, just a business you're proud of and customers you want to reach."
         />
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2">

@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { processSteps } from "@/data/process";
+import { CAL_LINK } from "@/lib/cal";
 
 export function HowItWorks() {
   return (
@@ -11,7 +12,7 @@ export function HowItWorks() {
         <SectionHeading
           eyebrow="How It Works"
           title="From Free Call to Live Website"
-          description="A simple, guided process — so you always know what's happening next."
+          description="A simple, guided process, so you always know what's happening next."
         />
 
         <div className="relative mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
@@ -36,7 +37,7 @@ export function HowItWorks() {
 
         <Reveal delay={0.3}>
           <div className="mt-16 flex justify-center">
-            <Button href="/#book-a-call" size="lg" showArrow>
+            <Button calLink={CAL_LINK} size="lg" showArrow>
               Book a Free Call
             </Button>
           </div>

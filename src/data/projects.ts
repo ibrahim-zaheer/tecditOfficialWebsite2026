@@ -143,7 +143,7 @@ export const projects: Project[] = [
     palette: ["#0b3d91", "#123a6b", "#1fb6d6", "#f2f7fb"],
     typography: { heading: "Sora", body: "Inter" },
     designApproach:
-      "Deep blues paired with a clean aqua accent read as dependable and clean — exactly what a homeowner wants to feel before letting someone into their house — while the entire layout is built around one bias: someone landing on this site has a problem right now.",
+      "Deep blues paired with a clean aqua accent read as dependable and clean, exactly what a homeowner wants to feel before letting someone into their house, while the entire layout is built around one bias: someone landing on this site has a problem right now.",
     uxHighlights: [
       "Emergency call button fixed to the screen on mobile at all times",
       "Service-area map so homeowners self-qualify in seconds",

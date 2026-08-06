@@ -5,7 +5,8 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
-import { pricingTiers, carePlan } from "@/data/pricing";
+import { pricingTiers, carePlan, visibilityPackage } from "@/data/pricing";
+import { CAL_LINK } from "@/lib/cal";
 
 export function Pricing() {
   return (
@@ -86,7 +87,7 @@ export function Pricing() {
                 </ul>
 
                 <Button
-                  href="/#book-a-call"
+                  calLink={CAL_LINK}
                   size="lg"
                   variant={tier.featured ? "primary" : "secondary"}
                   className="mt-8 w-full"
@@ -102,13 +103,38 @@ export function Pricing() {
           <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl border border-dashed border-border bg-muted p-6 sm:flex-row">
             <div>
               <h4 className="font-display text-base font-semibold text-ink-900">
-                {carePlan.name} — {carePlan.price}
+                {carePlan.name}: {carePlan.price}
               </h4>
               <p className="mt-1 text-sm text-ink-500">{carePlan.description}</p>
             </div>
-            <Button href="/#book-a-call" variant="secondary">
+            <Button calLink={CAL_LINK} variant="secondary">
               Ask About Care Plans
             </Button>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.28}>
+          <div className="mt-6 flex flex-col gap-5 rounded-2xl border border-dashed border-border bg-muted p-6">
+            <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+              <div>
+                <h4 className="font-display text-base font-semibold text-ink-900">
+                  {visibilityPackage.name}: {visibilityPackage.price}
+                </h4>
+                <p className="mt-1 text-sm text-ink-500">{visibilityPackage.description}</p>
+              </div>
+              <Button calLink={CAL_LINK} variant="secondary" className="shrink-0">
+                Ask About Visibility
+              </Button>
+            </div>
+
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {visibilityPackage.features.map((feature) => (
+                <li key={feature} className="flex items-start gap-2.5 text-sm text-ink-500">
+                  <Check className="mt-0.5 size-4 shrink-0 text-brand-500" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
           </div>
         </Reveal>
       </Container>

@@ -10,6 +10,7 @@ import { projects } from "@/data/projects";
 import { industries } from "@/data/industries";
 import { Project, Industry } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { CAL_LINK } from "@/lib/cal";
 
 const filters: Array<Industry | "All"> = ["All", ...industries];
 
@@ -91,7 +92,7 @@ export function PortfolioExplorer() {
                   Book a free call and we&apos;ll show you how we&apos;d
                   approach your website.
                 </p>
-                <Button href="/#book-a-call" className="mt-6">
+                <Button calLink={CAL_LINK} className="mt-6">
                   Book a Free Call
                 </Button>
               </div>

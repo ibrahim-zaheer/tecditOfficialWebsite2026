@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { CalProvider } from "@/components/providers/CalProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -21,7 +22,7 @@ const siteUrl = "https://www.tecdit.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "TecDit — Websites That Grow Local Businesses",
+    default: "TecDit: Websites That Grow Local Businesses",
     template: "%s | TecDit",
   },
   description:
@@ -37,14 +38,14 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "TecDit",
-    title: "TecDit — Websites That Grow Local Businesses",
+    title: "TecDit: Websites That Grow Local Businesses",
     description:
       "Premium websites for local businesses, built to attract customers and drive bookings. Book a free call with TecDit.",
     images: ["/logo.jpeg"],
   },
   twitter: {
     card: "summary",
-    title: "TecDit — Websites That Grow Local Businesses",
+    title: "TecDit: Websites That Grow Local Businesses",
     description:
       "Premium websites for local businesses, built to attract customers and drive bookings.",
     images: ["/logo.jpeg"],
@@ -68,6 +69,7 @@ export default function RootLayout({
       className={`${inter.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-ink-900">
+        <CalProvider />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

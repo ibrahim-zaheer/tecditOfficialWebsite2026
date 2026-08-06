@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { CheckCircle2, Mail, Clock, ShieldCheck, AlertCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { Button } from "@/components/ui/Button";
+import { CAL_LINK } from "@/lib/cal";
 
 const reassurances = [
   { icon: Clock, label: "We reply within 1 business day" },
@@ -27,7 +29,7 @@ export function BookACall() {
       "access_key",
       process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? ""
     );
-    formData.append("subject", "New Free Call Request — TecDit Website");
+    formData.append("subject", "New Free Call Request: TecDit Website");
     formData.append("from_name", "TecDit Website");
 
     try {
@@ -69,7 +71,7 @@ export function BookACall() {
             <p className="mt-5 max-w-md text-balance text-base leading-relaxed text-white/60 sm:text-lg">
               Tell us a bit about your business. We&apos;ll get on a free call,
               understand what you need, and show you exactly how we&apos;d
-              approach your website — no pressure, no obligation.
+              approach your website. No pressure, no obligation.
             </p>
           </Reveal>
 
@@ -97,7 +99,7 @@ export function BookACall() {
               >
                 <CheckCircle2 className="size-12 text-brand-600" />
                 <h3 className="font-display mt-5 text-xl font-semibold text-ink-900">
-                  Thanks — request received.
+                  Thanks! Request received.
                 </h3>
                 <p className="mt-2 max-w-xs text-sm text-ink-500">
                   We&apos;ll reach out within one business day to schedule your
@@ -105,7 +107,29 @@ export function BookACall() {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <div className="flex flex-col gap-7">
+                <div className="flex flex-col items-center gap-3 text-center">
+                  <h3 className="font-display text-xl font-semibold text-ink-900">
+                    Pick a Time That Works
+                  </h3>
+                  <p className="max-w-xs text-sm leading-relaxed text-ink-500">
+                    See real-time availability and book your free call
+                    instantly. No back-and-forth.
+                  </p>
+                  <Button calLink={CAL_LINK} size="lg" showArrow className="mt-1">
+                    Pick a Time
+                  </Button>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="h-px flex-1 bg-border" />
+                  <span className="text-xs font-medium uppercase tracking-wide text-ink-400">
+                    Prefer to send details instead?
+                  </span>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
+
+                <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <Field label="Full Name" name="name" type="text" placeholder="Jane Smith" required />
                   <Field
@@ -167,7 +191,8 @@ export function BookACall() {
                     hello@tecdit.com
                   </a>
                 </p>
-              </form>
+                </form>
+              </div>
             )}
           </div>
         </Reveal>
