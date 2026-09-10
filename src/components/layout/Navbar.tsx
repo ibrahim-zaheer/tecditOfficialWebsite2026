@@ -72,12 +72,12 @@ export function Navbar() {
         <div className="flex items-center gap-2 sm:gap-4">
           {/* Desktop: icon + number + availability */}
           <a
-            href="tel:+19716682679"
+            href="tel:+923094187234"
             className="group hidden flex-col leading-tight lg:flex"
           >
             <span className="flex items-center gap-1.5 text-sm font-medium text-ink-700 transition-colors group-hover:text-brand-600">
               <Phone className="size-4 text-brand-600" />
-              (971) 668-2679
+              +92 309 4187234
             </span>
             <span className="pl-5.5 text-xs text-ink-400">
               Mon–Fri, 9am–2pm ET
@@ -86,16 +86,16 @@ export function Navbar() {
 
           {/* Tablet: number only */}
           <a
-            href="tel:+19716682679"
+            href="tel:+923094187234"
             className="hidden items-center gap-1.5 text-sm font-medium text-ink-700 transition-colors hover:text-brand-600 sm:flex lg:hidden"
           >
             <Phone className="size-4 text-brand-600" />
-            (971) 668-2679
+            +92 309 4187234
           </a>
 
           {/* Mobile: icon-only tap target */}
           <a
-            href="tel:+19716682679"
+            href="tel:+923094187234"
             aria-label="Call TecDit"
             className="flex size-11 items-center justify-center text-ink-700 transition-colors hover:text-brand-600 sm:hidden"
           >

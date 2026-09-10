@@ -67,11 +67,11 @@ export function Footer() {
             <ul className="mt-4 flex flex-col gap-3">
               <li>
                 <a
-                  href="tel:+19716682679"
+                  href="tel:+923094187234"
                   className="flex items-center gap-2 text-sm text-ink-500 transition-colors hover:text-brand-600"
                 >
                   <Phone className="size-4" />
-                  (971) 668-2679
+                  +92 309 4187234
                 </a>
                 <span className="mt-1 block pl-6 text-xs text-ink-400">
                   Mon–Fri, 9am–2pm ET
