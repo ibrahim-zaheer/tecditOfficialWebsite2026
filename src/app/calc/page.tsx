@@ -42,8 +42,24 @@ const tools = [
 ];
 
 export default function ToolsHubPage() {
+  // Names below must match the visible breadcrumb trail exactly (see <nav aria-label="Breadcrumb"> below).
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Tools", item: pageUrl },
+    ],
+  };
+
   return (
     <div className="pt-28 pb-24 sm:pt-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Container className="max-w-3xl">
         <nav aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center gap-1.5 text-sm text-ink-400">

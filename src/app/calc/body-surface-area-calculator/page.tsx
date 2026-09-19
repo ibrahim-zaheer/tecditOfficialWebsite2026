@@ -138,9 +138,8 @@ export default function BodySurfaceAreaCalculatorPage() {
   const webApplicationJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Body Surface Area Calculator",
+    name: "Body Surface Area (BSA) Calculator",
     url: pageUrl,
-    description: pageDescription,
     applicationCategory: "HealthApplication",
     operatingSystem: "Any",
     offers: {
@@ -148,15 +147,28 @@ export default function BodySurfaceAreaCalculatorPage() {
       price: "0",
       priceCurrency: "USD",
     },
+    description:
+      "Free online calculator that estimates body surface area (BSA) using nine published formulas including Mosteller, Du Bois, and Haycock.",
+    publisher: {
+      "@type": "Organization",
+      name: "TECDIT",
+      url: siteUrl,
+    },
   };
 
+  // Names below must match the visible breadcrumb trail exactly (see <nav aria-label="Breadcrumb"> below).
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
       { "@type": "ListItem", position: 2, name: "Tools", item: `${siteUrl}/calc` },
-      { "@type": "ListItem", position: 3, name: pageTitle, item: pageUrl },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Body Surface Area Calculator",
+        item: pageUrl,
+      },
     ],
   };
 
