@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight, ArrowRight, Ruler } from "lucide-react";
+import { ChevronRight, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { calcTools } from "@/data/calcTools";
 
 const siteUrl = "https://www.tecdit.com";
 const pageUrl = `${siteUrl}/calc`;
@@ -30,16 +31,6 @@ export const metadata: Metadata = {
     images: ["/logo.jpeg"],
   },
 };
-
-const tools = [
-  {
-    name: "Body Surface Area (BSA) Calculator",
-    description:
-      "Calculate body surface area using 9 formulas, including Mosteller, Du Bois, and Haycock, with metric and imperial unit support.",
-    href: "/calc/body-surface-area-calculator",
-    icon: Ruler,
-  },
-];
 
 export default function ToolsHubPage() {
   // Names below must match the visible breadcrumb trail exactly (see <nav aria-label="Breadcrumb"> below).
@@ -85,7 +76,7 @@ export default function ToolsHubPage() {
         </p>
 
         <div className="mt-10 flex flex-col gap-4">
-          {tools.map((tool) => (
+          {calcTools.map((tool) => (
             <Link
               key={tool.href}
               href={tool.href}

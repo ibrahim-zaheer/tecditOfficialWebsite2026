@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { BsaCalculator } from "@/components/calc/BsaCalculator";
+import { RelatedTools } from "@/components/calc/RelatedTools";
 import { BSA_FORMULAS } from "@/lib/bsa";
 import { bsaFaqItems } from "@/data/bsaFaq";
 import { CAL_LINK } from "@/lib/cal";
@@ -465,6 +466,8 @@ export default function BodySurfaceAreaCalculatorPage() {
               ))}
             </ol>
           </section>
+
+          <RelatedTools currentHref="/calc/body-surface-area-calculator" />
 
           <div className="mt-16 rounded-2xl border border-border bg-muted p-6">
             <p className="text-sm font-medium text-ink-900">

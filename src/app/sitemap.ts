@@ -24,5 +24,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${siteUrl}/calc/navy-body-fat-calculator`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 }
